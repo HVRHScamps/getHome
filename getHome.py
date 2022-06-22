@@ -5,6 +5,7 @@ right = True
 #You can define helper functions here, make sure to but them *above* the main function
 target_color = (255, 0 ,0)
 def main(robot: libhousy.robot):
+    global right, timer
     #Here is where your recurring code will go
 
     if robot.colorSensor.getColor() == target_color:
