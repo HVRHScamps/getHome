@@ -17,7 +17,8 @@ def main(robot: libhousy.robot):
         else:
             robot.lDrive.Set(0)
             robot.rDrive.Set(.6)
-            
+
     if time.time() - timer > 2:
         timer = time.time()
         right = not right        
+        
