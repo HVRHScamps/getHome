@@ -26,11 +26,11 @@ def main(robot: libhousy.robot):
         robot.rDrive.Set(0)
     else:
         if right:
-            robot.lDrive.Set(.1)
-            robot.rDrive.Set(-.1)
+            robot.lDrive.Set(.17)
+            robot.rDrive.Set(-.17)
         else:
-            robot.lDrive.Set(-.1)
-            robot.rDrive.Set(.1)
+            robot.lDrive.Set(-.17)
+            robot.rDrive.Set(.17)
 
     if time.time() - timer > 3:
         timer = time.time()
