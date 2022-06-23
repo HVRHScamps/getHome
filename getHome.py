@@ -1,7 +1,7 @@
 import libhousy
 import time
 timer = time.time()
-right = True
+right = False
 # You can define helper functions here, make sure to but them *above* the main function
 target_color = (255, 0 ,0)
 
@@ -29,8 +29,8 @@ def main(robot: libhousy.robot):
             robot.lDrive.Set(-.2)
             robot.rDrive.Set(.2) 
         else:
-           robot.lDrive.Set(.2)
-           robot.rDrive.Set(-.2)
+           robot.lDrive.Set(.25)
+           robot.rDrive.Set(-.25)
 
     if time.time() - timer > 3:
         timer = time.time()
