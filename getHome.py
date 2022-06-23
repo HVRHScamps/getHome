@@ -19,18 +19,18 @@ def main(robot: libhousy.robot):
     # So we don't ever call myFunction which does our color decision.
     # Instead of the if below, do something like if myFunction(robot.colorSensor.getColor()) == "red"
     if myFunction(robot.colorSensor.getColor()) == "red":
-        robot.rDrive.Set(1)
-        robot.lDrive.Set(1)
+        robot.rDrive.Set(.6)
+        robot.lDrive.Set(.6)
     elif myFunction(robot.colorSensor.getColor()) == "blue":
         robot.lDrive.Set(0)
         robot.rDrive.Set(0)
     else:
         if right:
-            robot.lDrive.Set(.6)
+            robot.lDrive.Set(.3)
             robot.rDrive.Set(0)
         else:
             robot.lDrive.Set(0)
-            robot.rDrive.Set(.6)
+            robot.rDrive.Set(.3)
 
     if time.time() - timer > 2:
         timer = time.time()
