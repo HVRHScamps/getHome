@@ -2,7 +2,7 @@ import libhousy
 import time
 timer = time.time()
 right = True
-#You can define helper functions here, make sure to but them *above* the main function
+# You can define helper functions here, make sure to but them *above* the main function
 target_color = (255, 0 ,0)
 
 def myFunction(color: tuple):
@@ -14,11 +14,16 @@ def myFunction(color: tuple):
             return "blue"
 def main(robot: libhousy.robot):
     global right, timer
-    #Here is where your recurring code will go
+    # Here is where your recurring code will go
 
-    if robot.colorSensor.getColor() == target_color:
+    # So we don't ever call myFunction which does our color decision.
+    # Instead of the if below, do something like if myFunction(robot.colorSensor.getColor()) == "red"
+    if myFunction(robot.colorSensor.getColor()) == "red":
         robot.rDrive.Set(1)
         robot.lDrive.Set(1)
+    elif myFunction(robot.colorSensor.getColor()) == "blue":
+        robot.lDrive.Set(0)
+        robot.rDrive.Set(0)
     else:
         if right:
             robot.lDrive.Set(.6)
